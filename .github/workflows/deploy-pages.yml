@@ -29,7 +29,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p site
-          cp -R ./. site/
+          rsync -a --delete --exclude ".git" --exclude ".github" --exclude "site" --exclude "Dockerfile" --exclude "nginx.conf" --exclude ".dockerignore" ./ site/
           rm -rf site/.git site/.github
           rm -f site/Dockerfile site/nginx.conf site/.dockerignore
           touch site/.nojekyll
