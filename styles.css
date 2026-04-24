@@ -1758,3 +1758,2235 @@ main section[id] {
     transform: none;
   }
 }
+
+/* ─── ADDITIONS: Aviral Sharma Portfolio Improvements ─── */
+
+/* Availability badge */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.8rem 0.32rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.09);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0a6644;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+  width: fit-content;
+}
+
+.availability-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  flex-shrink: 0;
+  animation: pulse-green 2.6s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18); }
+  50%       { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.06); }
+}
+
+/* Chip primary emphasis */
+.chip-primary {
+  background: rgba(63, 109, 246, 0.09) !important;
+  border-color: rgba(63, 109, 246, 0.18) !important;
+  color: #1a3ab8 !important;
+  font-weight: 600 !important;
+}
+
+/* Contact section */
+.contact-section {
+  margin-bottom: 2rem;
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.4rem;
+  padding: 2.6rem;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: var(--shadow);
+  align-items: center;
+}
+
+.contact-title {
+  margin: 0.5rem 0 0;
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.contact-body {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.contact-channels {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(17, 18, 22, 0.07);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-channel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(10, 18, 36, 0.11);
+  border-color: rgba(63, 109, 246, 0.2);
+}
+
+.contact-channel-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(63, 109, 246, 0.08);
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.contact-channel-icon svg {
+  width: 1.18rem;
+  height: 1.18rem;
+}
+
+.contact-channel-body {
+  flex: 1;
+  display: grid;
+  gap: 0.12rem;
+}
+
+.contact-channel-body strong {
+  font-size: 0.96rem;
+}
+
+.contact-channel-body span {
+  color: var(--muted);
+  font-size: 0.81rem;
+}
+
+.contact-arrow {
+  color: var(--muted);
+  font-size: 1.05rem;
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-channel:hover .contact-arrow {
+  transform: translateX(4px);
+  color: var(--blue);
+}
+
+/* Metric counter animation */
+@keyframes count-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.metric-value.is-counting {
+  animation: count-in 400ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Enhanced reveal animation — Apple-like spring feel */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.987);
+  transition:
+    opacity  760ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Button hover spring */
+.button {
+  transition:
+    transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 200ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary:hover {
+  box-shadow: 0 12px 28px rgba(10, 18, 36, 0.22);
+}
+
+/* Showcase label — add year/company context */
+.showcase-label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive contact section */
+@media (max-width: 900px) {
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .availability-badge {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.65rem 0.28rem 0.45rem;
+  }
+
+  .contact-wrap {
+    border-radius: 24px;
+    padding: 1.1rem;
+  }
+
+  .contact-channel {
+    padding: 0.85rem 0.9rem;
+    gap: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .contact-channel-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+  }
+
+  .contact-channel-icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .chip-primary {
+    font-size: 0.74rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availability-dot {
+    animation: none !important;
+  }
+
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Architecture panel (OSIRIS project visual) ─── */
+.arch-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.8rem 0.6rem !important;
+}
+
+.arch-panel-label {
+  margin: 0 0 0.4rem 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(17, 18, 22, 0.38);
+}
+
+/* code tag inside list items */
+.showcase-copy li code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", monospace;
+  font-size: 0.82em;
+  background: rgba(63, 109, 246, 0.08);
+  color: #1a3ab8;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ─── Earlier work card (gas turbine / open source) ─── */
+.earlier-work-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 1.4rem;
+  align-items: center;
+  margin-top: 1.4rem;
+  padding: 1.8rem 2rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.earlier-work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.18), transparent 45%);
+  pointer-events: none;
+}
+
+.earlier-work-title {
+  margin: 0.35rem 0 0.7rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.earlier-work-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.75;
+  max-width: 56ch;
+}
+
+.earlier-work-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.earlier-work-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0 1rem;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
+.earlier-work-tags {
+  margin-top: 0 !important;
+}
+
+/* Right panel */
+.earlier-work-outputs {
+  padding: 1.2rem;
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.82), rgba(233,237,246,0.72));
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.earlier-work-outputs-label {
+  margin: 0 0 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(17, 18, 22, 0.38);
+}
+
+.earlier-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.earlier-work-grid span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.4rem;
+  border-radius: 8px;
+  background: rgba(63, 109, 246, 0.07);
+  border: 1px solid rgba(63, 109, 246, 0.12);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #1a3ab8;
+  text-align: center;
+}
+
+/* Mini flow diagram */
+.earlier-work-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ew-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  padding: 0.5rem 0.55rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 18, 22, 0.07);
+}
+
+.ew-node-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ew-node-value {
+  font-size: 0.66rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.ew-arrow {
+  font-size: 0.9rem;
+  color: rgba(17, 18, 22, 0.25);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .earlier-work-card {
+    grid-template-columns: 1fr;
+    padding: 1.3rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .earlier-work-card {
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .earlier-work-title {
+    font-size: clamp(1.1rem, 5.5vw, 1.4rem);
+  }
+
+  .earlier-work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .earlier-work-flow {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ew-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* ─── Secondary projects grid (compact 2-col below main showcases) ─── */
+.secondary-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+}
+
+.secondary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 1.6rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 20px 56px rgba(10, 18, 36, 0.09);
+  position: relative;
+  overflow: hidden;
+}
+
+.secondary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.22), transparent 40%);
+  pointer-events: none;
+}
+
+.secondary-card-alt {
+  background: linear-gradient(160deg, rgba(255,255,255,0.82), rgba(241,244,252,0.72));
+}
+
+.secondary-card-header {
+  margin-bottom: 0.7rem;
+}
+
+.secondary-card-title {
+  margin: 0.3rem 0 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.secondary-card-desc {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.72;
+}
+
+.secondary-card-bullets {
+  margin: 0 0 0.9rem;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.secondary-card-bullets li {
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.secondary-card-bullets li::marker {
+  color: rgba(17,18,22,0.28);
+}
+
+@media (max-width: 900px) {
+  .secondary-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .secondary-card {
+    border-radius: 20px;
+    padding: 1.1rem;
+  }
+}
+
+/* ─── Education + Contact side-by-side ─── */
+.edu-contact-section {
+  margin-bottom: 2rem;
+}
+
+.edu-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 2.4rem;
+  align-items: start;
+}
+
+.edu-col .section-heading h2,
+.contact-col .section-heading h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  max-width: none;
+}
+
+.contact-col .contact-channels {
+  gap: 0.65rem;
+}
+
+.contact-col .contact-channel {
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+}
+
+@media (max-width: 860px) {
+  .edu-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
+/* ─── Critical overrides ─── */
+
+/* 1. Sticky nav: always sticky regardless of viewport width */
+.site-header {
+  position: sticky !important;
+  top: 0.9rem !important;
+}
+
+/* 2. Hero h1: reduce font to eliminate empty space in right panel */
+.hero h1 {
+  font-size: clamp(2.4rem, 4.8vw, 4.4rem) !important;
+  line-height: 1.0 !important;
+}
+
+/* 3. Screen-copy right panel: start from top, no forced space-between */
+.screen-copy {
+  justify-content: flex-start !important;
+  gap: 1.4rem !important;
+}
+
+/* 4. Earlier-work-grid now lives inside visual-panel: ensure it renders correctly */
+.visual-panel .earlier-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+}
+
+.visual-panel .earlier-work-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* 5. Showcase-copy p — keep consistent with the other showcases */
+.showcase-copy > p {
+  max-width: 58ch;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ─── Fix sticky nav: overflow-x hidden kills sticky positioning ─── */
+/* Replace hidden with clip — clip doesn't create a new scroll container */
+html {
+  overflow-x: clip !important;
+}
+
+body {
+  overflow-x: clip !important;
+}
+
+.page-shell {
+  overflow-x: clip !important;
+}
+
+/* ─── Fix hero empty space: remove forced viewport height + stop stretching ─── */
+.hero {
+  min-height: auto !important;
+  align-items: start !important;
+  padding: 1.2rem 0 1.8rem !important;
+}
+
+/* hero-copy should not try to fill remaining height */
+.hero-copy {
+  height: auto !important;
+}
+
+/* hero-visual matches hero-copy height naturally when both are align-start */
+.hero-visual {
+  height: auto !important;
+  min-height: 36rem !important;
+}
+
+/* ─── Hero card height balance ─── */
+/* Revert to stretch so both cards are the same height */
+.hero {
+  align-items: stretch !important;
+  height: auto !important;
+}
+
+/* Reduce the right panel sub-heading — it was too large, making the
+   right card much taller than the left and forcing empty space */
+.screen-copy h2,
+.showcase-copy h3 ~ .screen-copy h2 {
+  font-size: clamp(1.15rem, 2vw, 1.6rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Give hero-copy a natural flex-start so its own content sits at top */
+.hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+/* ─── Fix visual panel empty space (gas turbine + others) ─── */
+/* Remove forced min-height — SVG panels size from their viewBox, 
+   sparse panels (gas turbine) size from content */
+.showcase .visual-panel,
+.showcase-reversed .visual-panel {
+  min-height: auto !important;
+}
+
+/* ─── Fix hero right card empty space at wide viewports ─── */
+/* More conservative h1 clamp — stops growing so aggressively at wide screens */
+.hero h1 {
+  font-size: clamp(2rem, 3.4vw, 3.4rem) !important;
+  line-height: 1.0 !important;
+}
+
+/* Hero visual: no forced min-height, stretch handles matching left card */
+.hero-visual {
+  min-height: auto !important;
+}
+
+/* Right panel: distribute content vertically when card is tall */
+.screen-copy {
+  justify-content: space-between !important;
+  gap: 0 !important;
+}
+
+/* ─── Systems Thinking section ─── */
+.sysarch-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  padding: 2rem 2rem 1.8rem;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  align-items: start;
+}
+
+.sysarch-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.2), transparent 40%);
+  pointer-events: none;
+}
+
+.sysarch-desc {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.78;
+  max-width: 54ch;
+}
+
+.sysarch-bullets {
+  margin: 0 0 1.1rem;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sysarch-bullets li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.sysarch-bullets li strong {
+  color: var(--text);
+}
+
+.sysarch-tags {
+  margin-top: 0 !important;
+}
+
+.sysarch-diagram {
+  position: sticky;
+  top: 6rem;
+  padding: 1rem;
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.82), rgba(233,237,246,0.72));
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+@media (max-width: 960px) {
+  .sysarch-card {
+    grid-template-columns: 1fr;
+    padding: 1.4rem;
+  }
+
+  .sysarch-diagram {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .sysarch-card {
+    border-radius: 22px;
+    padding: 1.1rem;
+  }
+}
+
+/* ─── Systems Thinking — revised layout ─── */
+.sysarch-card {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) !important;
+  align-items: start !important;
+  gap: 1.8rem !important;
+}
+
+/* Compact right column — stats + tags only */
+.sysarch-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-top: 0.5rem;
+}
+
+.sysarch-desc {
+  font-size: 1rem !important;
+  max-width: 36ch !important;
+  margin: 0 !important;
+}
+
+.sysarch-stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sysarch-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(17,18,22,0.07);
+}
+
+.sysarch-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.sysarch-stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Diagram on the left, no sticky needed at this layout */
+.sysarch-diagram {
+  position: relative !important;
+  top: auto !important;
+}
+
+@media (max-width: 960px) {
+  .sysarch-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sysarch-stat-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sysarch-stat {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   MOBILE FIXES — targeted overrides ≤ 680px
+   ════════════════════════════════════════════ */
+@media (max-width: 680px) {
+
+  /* ── 1. Contact channel icons — prevent SVG from filling screen ── */
+  .contact-channel {
+    display: grid !important;
+    grid-template-columns: 2.2rem 1fr auto !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .contact-channel-icon {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    min-width: 2.2rem !important;
+    max-width: 2.2rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .contact-channel-icon svg {
+    width: 1rem !important;
+    height: 1rem !important;
+    max-width: 1rem !important;
+    max-height: 1rem !important;
+  }
+
+  /* ── 2. Gas turbine panel — fix collapsed grid + flow ── */
+  .visual-panel .earlier-work-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    margin-bottom: 0.9rem !important;
+  }
+
+  .visual-panel .earlier-work-grid span {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.2rem !important;
+    text-align: center !important;
+  }
+
+  .visual-panel .earlier-work-flow {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .visual-panel .ew-node {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 0.4rem 0.35rem !important;
+  }
+
+  .visual-panel .ew-node-label {
+    font-size: 0.65rem !important;
+  }
+
+  .visual-panel .ew-node-value {
+    font-size: 0.6rem !important;
+  }
+
+  .visual-panel .ew-arrow {
+    font-size: 0.7rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ── 3. Infrastructure stats — restore card appearance ── */
+  .sysarch-stat-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+  }
+
+  .sysarch-stat {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+    padding: 0.85rem 1rem !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,0.72) !important;
+    border: 1px solid rgba(17,18,22,0.08) !important;
+  }
+
+  .sysarch-stat-value {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1 !important;
+    color: var(--text) !important;
+    display: block !important;
+  }
+
+  .sysarch-stat-label {
+    font-size: 0.78rem !important;
+    color: var(--muted) !important;
+    line-height: 1.5 !important;
+    display: block !important;
+  }
+
+  /* ── 4. Arch panel label — keep above SVG, full width ── */
+  .arch-panel {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .arch-panel-label {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* ── 5. Sysarch card — single column on mobile ── */
+  .sysarch-card {
+    grid-template-columns: 1fr !important;
+    padding: 1.1rem !important;
+    border-radius: 22px !important;
+  }
+
+  /* ── 6. Secondary card bullets — slightly smaller on mobile ── */
+  .secondary-card-bullets li {
+    font-size: 0.82rem !important;
+    line-height: 1.58 !important;
+  }
+
+  /* ── 7. Contact col — stack naturally below edu ── */
+  .edu-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.4rem !important;
+  }
+
+  .contact-col .contact-channels {
+    gap: 0.55rem !important;
+  }
+}
+
+/* ── Attribution diagram: keep card styling on mobile ── */
+@media (max-width: 980px) {
+  .visual-panel {
+    background: rgba(255,255,255,0.82) !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+    border-radius: 24px !important;
+    padding: 1rem !important;
+    box-shadow: 0 8px 32px rgba(10,18,36,0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .visual-teal.visual-panel {
+    background: linear-gradient(160deg, rgba(14,111,124,0.08), rgba(14,111,124,0.03)) !important;
+    border-color: rgba(14,111,124,0.2) !important;
+  }
+
+  .visual-white.visual-panel {
+    background: rgba(255,255,255,0.92) !important;
+  }
+
+  .arch-panel.visual-panel {
+    background: linear-gradient(160deg, rgba(255,255,255,0.92), rgba(233,237,246,0.85)) !important;
+  }
+}
+
+/* ── Visual panel mobile margins — stop edge-to-edge ── */
+@media (max-width: 980px) {
+  .visual-panel {
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   GLOBAL MOBILE LAYOUT — single source of truth ≤ 680px
+   All spacing, alignment, and margin handled here.
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 680px) {
+
+  /* ── Global page padding: everything gets 1rem sides ── */
+  .page-shell {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Remove individual panel margins (now handled by page-shell) ── */
+  .visual-panel {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ── Consistent text alignment: everything left-aligned ── */
+  .section-heading,
+  .section-heading-centered,
+  .section-heading h2,
+  .section-heading-centered h2,
+  .section-heading p.eyebrow,
+  .section-heading-centered p.eyebrow,
+  .manifesto-copy,
+  .manifesto-copy h2,
+  .manifesto-copy .eyebrow {
+    text-align: left !important;
+  }
+
+  /* ── Section headings: consistent spacing ── */
+  .section {
+    padding-top: 3rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* ── Showcases: full width, no horizontal overflow ── */
+  .showcase,
+  .showcase-reversed {
+    padding: 1.2rem !important;
+    border-radius: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ── Secondary cards ── */
+  .secondary-card {
+    padding: 1.1rem !important;
+    border-radius: 20px !important;
+    margin: 0 !important;
+  }
+
+  /* ── Metric cards: 2-col grid ── */
+  .metrics {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.6rem !important;
+    padding: 0 !important;
+  }
+
+  /* ── Manifesto grid: single column ── */
+  .manifesto-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* ── Skills: full width panels ── */
+  .skill-columns {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .skill-panel {
+    padding: 1.1rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* ── Experience timeline: single column ── */
+  .experience-timeline {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .timeline-entry {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .timeline-rail {
+    display: none !important;
+  }
+
+  .experience-card {
+    padding: 1.1rem !important;
+    border-radius: 20px !important;
+    margin: 0 !important;
+    background: rgba(255,255,255,0.75) !important;
+    border: 1px solid rgba(17,18,22,0.07) !important;
+    box-shadow: 0 4px 16px rgba(10,18,36,0.06) !important;
+  }
+
+  /* ── Info cards (education) ── */
+  .info-card {
+    border-radius: 20px !important;
+    padding: 1.1rem !important;
+  }
+
+  /* ── Sysarch card ── */
+  .sysarch-card {
+    padding: 1.1rem !important;
+    border-radius: 20px !important;
+    margin: 0 !important;
+  }
+
+  /* ── Earlier work card ── */
+  .earlier-work-card {
+    border-radius: 20px !important;
+    padding: 1.1rem !important;
+    margin: 0 !important;
+  }
+
+  /* ── Contact channels ── */
+  .contact-wrap {
+    border-radius: 20px !important;
+    padding: 1.1rem !important;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-radius: 20px !important;
+    padding: 1.2rem !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   SYSTEMATIC MOBILE FIXES v16
+   ════════════════════════════════════════════ */
+
+/* ── 1. Nav: prevent Resume button being cut off ── */
+@media (max-width: 780px) {
+  .site-header {
+    padding: 0.55rem 0.75rem !important;
+  }
+
+  .site-nav {
+    gap: 0.3rem !important;
+    column-gap: 0.3rem !important;
+  }
+
+  .site-nav a:not(.nav-cta) {
+    font-size: 0.72rem !important;
+    padding: 0 !important;
+  }
+
+  .site-nav .nav-cta {
+    padding: 0.45rem 0.7rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ── 2. Metrics: restore horizontal scroll on mobile (override the 1fr grid) ── */
+@media (max-width: 680px) {
+  .metrics {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    grid-template-columns: unset !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 0.7rem !important;
+    padding-inline: 1rem !important;
+  }
+
+  .metrics .metric-card {
+    flex: 0 0 78% !important;
+    min-width: 78% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+  }
+}
+
+/* ── 3. Section headings + body text: center on mobile ── */
+@media (max-width: 680px) {
+  .section-heading-centered,
+  .section-heading-centered h2,
+  .section-heading-centered p,
+  .section-heading-centered .eyebrow {
+    text-align: center !important;
+  }
+
+  /* Manifesto copy */
+  .manifesto-copy,
+  .manifesto-copy h2,
+  .manifesto-copy p,
+  .manifesto-copy .eyebrow {
+    text-align: center !important;
+  }
+
+  /* Education + contact section headings */
+  .edu-col .section-heading h2,
+  .edu-col .section-heading .eyebrow,
+  .contact-col .section-heading h2,
+  .contact-col .section-heading .eyebrow,
+  .contact-col .contact-body {
+    text-align: center !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    text-align: center !important;
+  }
+  .site-footer .footer-actions {
+    justify-content: center !important;
+  }
+}
+
+/* ── 4. Showcase label: force SOLO-BUILT etc to new line ── */
+.showcase-label {
+  display: block !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+@media (max-width: 680px) {
+  .showcase-label {
+    /* Each · separated segment on its own line on very small screens */
+    word-spacing: 0.05em !important;
+  }
+
+  /* The label segments that should break: insert line break before SOLO-BUILT / TEAM CONTRIBUTION */
+  /* We do this via a zero-width trick on the · before those words */
+  .showcase-label {
+    line-height: 1.7 !important;
+  }
+}
+
+/* ── 5. Attribution / classification card: ensure side borders visible ── */
+.showcase-reversed .visual-panel.visual-teal.arch-panel,
+.showcase-reversed .visual-panel {
+  border: 1px solid rgba(14, 111, 124, 0.2) !important;
+  border-radius: 28px !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 680px) {
+  .showcase-reversed .visual-panel,
+  .showcase .visual-panel {
+    border: 1px solid rgba(17, 18, 22, 0.09) !important;
+    border-radius: 20px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .showcase-reversed .visual-panel.visual-teal,
+  .showcase-reversed .visual-panel.visual-teal.arch-panel {
+    border-color: rgba(14, 111, 124, 0.22) !important;
+  }
+}
+
+/* ── 6. Education + contact: center headings on mobile ── */
+@media (max-width: 860px) {
+  .edu-col .section-heading,
+  .contact-col .section-heading {
+    text-align: center !important;
+  }
+
+  .edu-col .section-heading h2,
+  .contact-col .section-heading h2 {
+    text-align: center !important;
+  }
+
+  .contact-col .contact-body {
+    text-align: center !important;
+  }
+}
+
+/* Showcase sublabel (SOLO-BUILT, TEAM CONTRIBUTION) */
+.showcase-sublabel {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue, #3f6df6);
+  background: rgba(63, 109, 246, 0.07);
+  padding: 0.1em 0.5em;
+  border-radius: 4px;
+  margin-top: 0.2em;
+}
+
+/* ── Nav: Resume always pinned right, other links left-aligned ── */
+.site-nav {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 0.25rem !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.site-nav a:not(.nav-cta) {
+  flex-shrink: 1 !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Resume pill: always pushed to the far right */
+.site-nav .nav-cta {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  order: 99 !important;
+}
+
+@media (max-width: 600px) {
+  .site-nav a:not(.nav-cta) {
+    font-size: 0.68rem !important;
+    padding: 0 0.1rem !important;
+  }
+
+  .site-nav .nav-cta {
+    font-size: 0.74rem !important;
+    padding: 0.42rem 0.65rem !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   NAV RESTRUCTURE v17 — Resume in header-left
+   ════════════════════════════════════════════ */
+
+/* Header: two logical rows */
+.site-header {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+/* Row 1: brand + icons + Resume */
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 0.75rem !important;
+}
+
+/* Brand stays left, icons stay left, Resume pins right */
+.header-resume {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  /* Same styles as nav-cta */
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.5rem 1.1rem !important;
+  border-radius: 999px !important;
+  background: var(--text, #111216) !important;
+  color: #fff !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  letter-spacing: 0.01em !important;
+  transition: transform 200ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 200ms ease !important;
+}
+
+.header-resume:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(10,18,36,0.2) !important;
+}
+
+/* Row 2: nav links only (no Resume) — spread evenly */
+.site-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0 !important;
+  width: 100% !important;
+  justify-content: space-between !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.site-nav a:not(.nav-cta) {
+  flex: 1 !important;
+  text-align: center !important;
+  font-size: 0.85rem !important;
+  padding: 0.2rem 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-width: 0 !important;
+}
+
+/* Hide any remaining nav-cta inside site-nav (defensive) */
+.site-nav .nav-cta {
+  display: none !important;
+}
+
+/* Brand-copy: prevent subtitle wrapping on desktop */
+.brand-copy {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.brand-copy strong {
+  white-space: nowrap !important;
+}
+
+.brand-copy span {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 18ch !important;
+  display: block !important;
+}
+
+/* Mobile: slightly smaller font for nav links */
+@media (max-width: 600px) {
+  .site-nav a:not(.nav-cta) {
+    font-size: 0.73rem !important;
+  }
+
+  .header-resume {
+    font-size: 0.78rem !important;
+    padding: 0.42rem 0.75rem !important;
+  }
+}
+
+/* ── Classification pipeline card: visible border ── */
+.showcase-reversed .arch-panel.visual-teal {
+  background: rgba(240, 249, 250, 0.95) !important;
+  border: 1.5px solid rgba(14, 111, 124, 0.35) !important;
+  box-shadow: 0 0 0 1px rgba(14, 111, 124, 0.1), 0 8px 24px rgba(14, 111, 124, 0.08) !important;
+}
+
+/* Also fix on mobile where it was blending */
+@media (max-width: 680px) {
+  .visual-panel.visual-teal,
+  .visual-panel.visual-teal.arch-panel {
+    border: 1.5px solid rgba(14, 111, 124, 0.35) !important;
+    background: rgba(236, 249, 250, 0.98) !important;
+    box-shadow: 0 4px 16px rgba(14, 111, 124, 0.12) !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   NAV v18 — brand left · links center · icons+resume right
+   ════════════════════════════════════════════ */
+
+/* Desktop: single row, all three zones */
+.site-header {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.6rem 1rem !important;
+}
+
+/* Brand: left, no grow */
+.site-header > .brand {
+  flex: 0 0 auto !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Nav links: fill center space */
+.site-nav {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.1rem !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+.site-nav a {
+  flex: 0 0 auto !important;
+  padding: 0.3rem 0.65rem !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+}
+
+/* Right cluster: icons + Resume, no grow, no shrink */
+.header-right {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.header-right .nav-cta {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Hide any old header-left, header-resume if leftover */
+.header-left { display: contents !important; }
+.header-resume { display: none !important; }
+
+/* ── Mobile: brand+right in row 1, nav in row 2 ── */
+@media (max-width: 700px) {
+  .site-header {
+    flex-wrap: wrap !important;
+    padding: 0.6rem 0.8rem !important;
+    gap: 0.3rem !important;
+  }
+
+  /* Brand takes available space in row 1 */
+  .site-header > .brand {
+    flex: 1 1 auto !important;
+    margin-right: 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* Right cluster stays in row 1, right-aligned */
+  .header-right {
+    flex: 0 0 auto !important;
+    margin-left: 0 !important;
+    gap: 0.3rem !important;
+  }
+
+  .header-right .nav-icon-link {
+    width: 1.9rem !important;
+    height: 1.9rem !important;
+  }
+
+  .header-right .nav-cta {
+    padding: 0.4rem 0.7rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Nav links: full width row 2 */
+  .site-nav {
+    order: 3 !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+
+  .site-nav a {
+    flex: 1 !important;
+    text-align: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.2rem 0.1rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+  }
+
+  /* Brand subtitle: allow truncation */
+  .brand-copy span {
+    max-width: 16ch !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav a {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* ── Desktop nav: links right-aligned, brand left, full subtitle ── */
+@media (min-width: 701px) {
+  .site-header {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+
+  /* Brand: left, fixed width, subtitle fully visible */
+  .site-header > .brand {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .brand-copy span {
+    max-width: none !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  /* Nav: push to right using margin-left auto */
+  .site-nav {
+    flex: 0 0 auto !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    gap: 0 !important;
+  }
+
+  .site-nav a {
+    padding: 0.3rem 0.7rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Right cluster: icons + Resume after nav */
+  .header-right {
+    flex: 0 0 auto !important;
+    margin-left: 0.4rem !important;
+  }
+
+  /* Resume: solid black background */
+  .header-right .nav-cta {
+    background: #111216 !important;
+    color: #fff !important;
+    padding: 0.48rem 1.1rem !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+  }
+
+  .header-right .nav-cta:hover {
+    background: #2a2d38 !important;
+  }
+}
+
+/* ── Desktop nav: hide subtitle to give links full room ── */
+@media (min-width: 701px) {
+  .brand-copy span:last-child {
+    display: none !important;
+  }
+
+  /* Links: no truncation, natural width */
+  .site-nav a {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* ── Desktop nav FINAL: subtitle visible + all links untruncated ── */
+@media (min-width: 701px) {
+  /* Show subtitle again */
+  .brand-copy span:last-child {
+    display: block !important;
+  }
+
+  /* Brand: compact but full */
+  .site-header > .brand {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+  }
+
+  .brand-copy strong {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-copy span:last-child {
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    max-width: none !important;
+    text-overflow: clip !important;
+    opacity: 0.65 !important;
+  }
+
+  /* Nav: all links fully visible, no truncation */
+  .site-nav {
+    gap: 0 !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    overflow: visible !important;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    min-width: auto !important;
+    font-size: 0.8rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+}
+
+/* ── Nav links: remove fixed spacing, justify to right naturally ── */
+@media (min-width: 701px) {
+  .site-nav {
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .site-nav a {
+    padding: 0.25rem 0.6rem !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* ── Nav links: text-width boxes, tight gap, pushed right before icons ── */
+@media (min-width: 701px) {
+  .site-nav {
+    justify-content: flex-end !important;
+    flex: 1 1 auto !important;
+    gap: 0.15rem !important;
+  }
+
+  .site-nav a:not(.nav-cta) {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 0.28rem 0.6rem !important;
+    font-size: 0.82rem !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   MOBILE HAMBURGER MENU
+   ════════════════════════════════════════════ */
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+
+/* Hide desktop site-nav on mobile */
+@media (max-width: 700px) {
+  .site-nav {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4px !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0.2rem !important;
+    flex-shrink: 0 !important;
+    border-radius: 8px !important;
+    transition: background 150ms ease !important;
+  }
+
+  .hamburger:hover {
+    background: rgba(17,18,22,0.06) !important;
+  }
+
+  .hamburger span {
+    display: block !important;
+    width: 18px !important;
+    height: 2px !important;
+    background: var(--text, #111216) !important;
+    border-radius: 2px !important;
+    transition: transform 250ms ease, opacity 250ms ease !important;
+    transform-origin: center !important;
+  }
+
+  /* Hamburger → X when open */
+  .hamburger.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg) !important;
+  }
+  .hamburger.is-open span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .hamburger.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg) !important;
+  }
+
+  /* Mobile nav drawer */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Positioned relative to the page-shell so it slides below the sticky nav */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms cubic-bezier(0.16,1,0.3,1), padding 300ms ease;
+    box-shadow: 0 8px 32px rgba(10,18,36,0.1);
+  }
+
+  .mobile-nav.is-open {
+    max-height: 320px;
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.85rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text, #111216);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(17,18,22,0.05);
+    transition: background 150ms ease;
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:active {
+    background: rgba(63,109,246,0.05);
+    color: #1a3ab8;
+  }
+
+  /* Push drawer below sticky header */
+  .mobile-nav {
+    top: var(--header-height, 5.5rem);
+  }
+}
+
+/* ── Hide mobile-nav completely on desktop ── */
+@media (min-width: 701px) {
+  .mobile-nav {
+    display: none !important;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* ── Redesigned mobile menu: glassmorphism card ── */
+@media (max-width: 700px) {
+  .mobile-nav {
+    /* Sits inside page flow, below sticky nav */
+    position: fixed !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    top: auto !important;
+    border-radius: 20px !important;
+    background: rgba(255,255,255,0.96) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(255,255,255,0.7) !important;
+    box-shadow: 0 16px 48px rgba(10,18,36,0.15), 0 0 0 0.5px rgba(17,18,22,0.06) !important;
+    padding: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 320ms cubic-bezier(0.16,1,0.3,1),
+                opacity 220ms ease,
+                transform 280ms cubic-bezier(0.16,1,0.3,1) !important;
+    opacity: 0 !important;
+    transform: translateY(-8px) scale(0.98) !important;
+    z-index: 999 !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-nav.is-open {
+    max-height: 400px !important;
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+    padding: 0.4rem 0 !important;
+  }
+
+  .mobile-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.9rem 1.2rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: var(--text, #111216) !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(17,18,22,0.04) !important;
+    letter-spacing: -0.01em !important;
+    transition: background 120ms ease, color 120ms ease !important;
+    gap: 0.6rem !important;
+  }
+
+  .mobile-nav-link::before {
+    content: "" !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: rgba(63,109,246,0.35) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none !important;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:active {
+    background: rgba(63,109,246,0.05) !important;
+    color: #1a3ab8 !important;
+  }
+
+  .mobile-nav-link:hover::before,
+  .mobile-nav-link:active::before {
+    background: #3f6df6 !important;
+  }
+
+  /* Nicer hamburger button */
+  .hamburger {
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+    border-radius: 10px !important;
+    background: rgba(17,18,22,0.06) !important;
+    transition: background 150ms ease !important;
+  }
+
+  .hamburger:hover {
+    background: rgba(17,18,22,0.1) !important;
+  }
+
+  .hamburger span {
+    width: 16px !important;
+    height: 1.5px !important;
+    background: var(--text, #111216) !important;
+    border-radius: 2px !important;
+  }
+
+  .hamburger.is-open {
+    background: rgba(63,109,246,0.1) !important;
+  }
+
+  .hamburger.is-open span {
+    background: #1a3ab8 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE HEADER v26 — full restructure
+   ═══════════════════════════════════════════ */
+@media (max-width: 700px) {
+
+  /* Single row: [brand+icons left] [hamburger+Resume right] */
+  .site-header {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+
+  /* Brand: grow to fill available, show full subtitle */
+  .site-header > .brand {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+  }
+
+  .brand-copy {
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  .brand-copy strong {
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Full subtitle visible on mobile */
+  .brand-copy span:last-child {
+    display: block !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    max-width: none !important;
+    text-overflow: clip !important;
+    opacity: 0.6 !important;
+  }
+
+  /* Right cluster: icons LEFT of hamburger+Resume */
+  .header-right {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    margin-left: 0 !important;
+  }
+
+  /* Move hamburger to be BEFORE Resume inside header-right */
+  .hamburger {
+    order: 1 !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 9px !important;
+    background: rgba(17,18,22,0.07) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger.is-open {
+    background: rgba(63,109,246,0.1) !important;
+  }
+
+  /* nav-contact-links: move to LEFT side of header (before header-right) */
+  /* Since it's inside header-right, reorder: icons first, then hamburger, then Resume */
+  .header-right .nav-icon-link {
+    order: 0 !important;
+  }
+
+  .header-right .nav-cta {
+    order: 2 !important;
+    background: #111216 !important;
+    color: #fff !important;
+    padding: 0.42rem 0.8rem !important;
+    border-radius: 999px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Remove bullet dots from mobile menu */
+  .mobile-nav-link::before {
+    display: none !important;
+  }
+
+  .mobile-nav-link {
+    gap: 0 !important;
+    padding: 0.85rem 1.2rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Site-nav still hidden on mobile */
+  .site-nav {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE 2-ROW HEADER — final
+   ═══════════════════════════════════════════ */
+
+/* Mobile bottom row: hidden on desktop */
+.mobile-bottom-row {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  /* Header: wrap into 2 rows */
+  .site-header {
+    flex-wrap: wrap !important;
+    padding: 0.65rem 0.85rem 0.6rem !important;
+    gap: 0.5rem 0 !important;
+    align-items: center !important;
+  }
+
+  /* ROW 1: brand grows, hamburger pins right */
+  .site-header > .brand {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .brand-copy strong {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-copy span:last-child {
+    display: block !important;
+    font-size: 0.68rem !important;
+    opacity: 0.58 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    max-width: none !important;
+  }
+
+  .hamburger {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 9px !important;
+    background: rgba(17,18,22,0.07) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    border: none !important;
+    cursor: pointer !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger span {
+    display: block !important;
+    width: 16px !important;
+    height: 1.5px !important;
+    background: #111216 !important;
+    border-radius: 2px !important;
+    transition: transform 250ms ease, opacity 250ms ease !important;
+  }
+
+  .hamburger.is-open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg) !important; }
+  .hamburger.is-open span:nth-child(2) { opacity: 0 !important; }
+  .hamburger.is-open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg) !important; }
+
+  /* Hide desktop nav + right cluster on mobile */
+  .site-nav { display: none !important; }
+  .header-right { display: none !important; }
+
+  /* ROW 2: mobile-only icons left + Resume right */
+  .mobile-bottom-row {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+    padding-top: 0.1rem !important;
+  }
+
+  .mobile-bottom-row .nav-icon-link {
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 8px !important;
+    display: grid !important;
+    place-items: center !important;
+    color: var(--muted, #5d6470) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-bottom-row .nav-icon-link svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  /* Resume pinned to far right on row 2 */
+  .mobile-resume {
+    margin-left: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.45rem 1rem !important;
+    border-radius: 999px !important;
+    background: #111216 !important;
+    color: #fff !important;
+    font-size: 0.83rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-resume:hover {
+    background: #2a2d38 !important;
+  }
+}
+
+/* Final mobile header lock: row 1 = brand + hamburger, row 2 = icons + resume */
+@media (max-width: 700px) {
+  .site-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.5rem 0 !important;
+  }
+
+  .site-header > .brand {
+    order: 1 !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .hamburger {
+    order: 2 !important;
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  .site-nav,
+  .header-right {
+    display: none !important;
+  }
+
+  .mobile-bottom-row {
+    order: 3 !important;
+    display: flex !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .mobile-resume {
+    margin-left: auto !important;
+  }
+}
+
+/* Final fixes: manifesto heading alignment + anchor offset under sticky mobile header */
+.manifesto-copy.section-heading-centered,
+.manifesto-copy.section-heading-centered .eyebrow,
+.manifesto-copy.section-heading-centered h2 {
+  text-align: center !important;
+}
+
+@media (max-width: 700px) {
+  main section[id] {
+    scroll-margin-top: 9.25rem !important;
+  }
+}
