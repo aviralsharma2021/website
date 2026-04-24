@@ -173,7 +173,7 @@ hardResetSwipeRails();
     if (header) {
       const rect = header.getBoundingClientRect();
       // Position just below the header card with a small gap
-      drawer.style.top = (rect.bottom + 8) + 'px';
+      drawer.style.setProperty('top', (rect.bottom + 8) + 'px', 'important');
     }
   }
 
